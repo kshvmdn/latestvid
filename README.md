@@ -1,7 +1,7 @@
 # Latest Vid
 A command-line tool to open the most recent [YouTube](http://youtube.com) video for any account. Available on [npm](https://www.npmjs.com/package/latestvid).
 
-![LatestVid](http://i.imgur.com/JPtGUuE.gif)
+![LatestVid](http://i.imgur.com/dFZVf8e.gif)
 
 ### Setup
 Prerequisites: [Node v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) (*for ES6*)
@@ -19,4 +19,4 @@ lastvid YOUTUBE_USER
 
 Feel free to [open an issue](https://github.com/kshvmdn/latestvid/issues) or make a [pull request](https://github.com/kshvmdn/latestvid/pulls)!
 
-Inspired by [`last-last-week`](https://www.npmjs.com/package/last-last-week) by @[himynameisdave](https://github.com/himynameisdave).
+Idea based on [`last-last-week`](https://www.npmjs.com/package/last-last-week) by @[himynameisdave](https://github.com/himynameisdave).
