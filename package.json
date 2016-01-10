@@ -1,7 +1,7 @@
 {
   "name": "latestvid",
   "version": "0.0.1",
-  "description": "A command-line tool to open the most recent YouTube video for any account.",
+  "description": "A command-line tool to open the latest YouTube upload for an account.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,7 +19,6 @@
   "dependencies": {
     "bluebird": "^3.1.1",
     "open": "0.0.5",
-    "request": "^2.67.0",
     "x-ray": "^2.0.3"
   }
 }
