@@ -18,7 +18,7 @@ var getLatestVid = function(user) {
 
 let ytUser = process.argv[2] != undefined ? process.argv[2] : 'marquesbrownlee';
 getLatestVid(ytUser).then(function(url) {
-  console.log("Opening latest " + ytUser.toUpperCase() + " video...");
+  console.log("Opening the latest " + ytUser.toUpperCase() + " video...");
   open(url);
   process.exit(1);
 }).catch(function(e) {
