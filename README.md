@@ -19,4 +19,4 @@ lastvid YOUTUBE_USER
 
 Feel free to [open an issue](https://github.com/kshvmdn/latestvid/issues) or make a [pull request](https://github.com/kshvmdn/latestvid/pulls)!
 
-Inspired by [`last-last-week`](https://www.npmjs.com/package/last-last-week) by @himynameisdave.
+Inspired by [`last-last-week`](https://www.npmjs.com/package/last-last-week) by @[himynameisdave](https://github.com/himynameisdave).
