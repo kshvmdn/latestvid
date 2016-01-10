@@ -6,10 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kshvmdn/latest-vid.git"
   },
+  "keywords": [
+    "YouTube",
+    "video",
+    "latestvid",
+    "kshvmdn",
+    "open",
+    "xray",
+    "bluebird"
+  ],
   "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
   "license": "MIT",
   "bugs": {
