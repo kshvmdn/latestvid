@@ -17,6 +17,7 @@ var getLatestVid = function(user) {
   });
   prom.then(function(url){
     console.log("Opening latest upload by user \"" + user + "\"...");
+    open(url);
   }).catch(function() {
     console.log("User \"" + user + "\" doesn\'t exist or has no videos.");
   });
