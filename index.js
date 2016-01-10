@@ -20,6 +20,8 @@ let ytUser = process.argv[2] != undefined ? process.argv[2] : 'marquesbrownlee';
 getLatestVid(ytUser).then(function(url) {
   console.log("Opening latest " + ytUser.toUpperCase() + " video...");
   open(url);
+  process.exit(1);
 }).catch(function(e) {
   console.log("User " + ytUser.toUpperCase() + " doesn\'t exist or has no videos.");
+  process.exit(0);
 });
