@@ -21,5 +21,5 @@ getLatestVid(ytUser).then(function(url) {
   console.log("Opening latest " + ytUser.toUpperCase() + " video...");
   open(url);
 }).catch(function(e) {
-    console.log("User " + ytUser.toUpperCase() + " doesn\'t exist or has no videos.");
+  console.log("User " + ytUser.toUpperCase() + " doesn\'t exist or has no videos.");
 });
