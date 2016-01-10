@@ -1,5 +1,5 @@
 {
-  "name": "latest-vid",
+  "name": "latestvid",
   "version": "0.0.1",
   "description": "A command-line tool to open the most recent YouTube video for any account.",
   "main": "index.js",
