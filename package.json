@@ -1,6 +1,6 @@
 {
   "name": "latestvid",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "A command-line tool to open the latest YouTube upload for an account.",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kshvmdn/latest-vid/issues"
+  },
+  "bin": {
+    "latestvid": "./index.js"
   },
   "homepage": "https://github.com/kshvmdn/latest-vid#readme",
   "dependencies": {
