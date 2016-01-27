@@ -1,56 +1,28 @@
 #! /usr/bin/env node
-"use strict";
+'use strict';
 
-const fs = require('fs');
-const open = require("open");
-const os = require('os-homedir')();
-const path = require('path');
-const Promise = require("bluebird");
-const Xray = require("x-ray"), xray = Xray();
-const ytdl = require('youtube-dl');
+const meow = require('meow');
+const latestvid = require('./latestvid');
 
-var getLatestVid = function(user) {
-  let base = "https://www.youtube.com/user/" + user + "/videos";
-  return new Promise(function(resolve, reject) {
-    xray(base, "li.channels-content-item a@href")(function(err, body) {
-      if (err || body == undefined)
-        reject();
-      resolve(body);
-    });
-  });
-}
+const cli = meow(`
+  Usage
+    $ latestvid <user> <download_video>
 
-var openVid = function(url, user) {
-  console.log("Opening the latest " + user.toUpperCase() + " video...");
-  open(url);
-}
+  Options
+    -u, --user      YouTube account
+    -d, --download  Download or open
+`);
 
-var dlVid = function(url, user) {
-  console.log("Downloading the latest " + user.toUpperCase() + " video...");
-  var video = ytdl(url, ['-f', '22']); // 1080p mp4
-  var size = 0;
-  video.on('info', function(info) {
-    size = info.size;
-    var file = path.join(os, 'Desktop', info._filename);
-    video.pipe(fs.createWriteStream(file));
-  });
-  var pos = 0;
-  video.on('data', function data(chunk) {
-    pos += chunk.length;
-    if (size) {
-      var percent = (pos / size * 100).toFixed(2);
-      process.stdout.cursorTo(0);
-      process.stdout.clearLine(1);
-      process.stdout.write(percent + '%');
-    }
-  });
-  video.on('end', function end() {
-    console.log('\n');
-  })
-}
+if (cli.flags['u'] == undefined)
+  console.log('User not provided, run --help for more info.'); process.exit(1);
 
-module.exports = {
-  getLatest: getLatestVid,
-  open: openVid,
-  download: dlVid
-};
+let user = cli.flags['u'];
+let dl = Boolean(cli.flags['d']);
+
+latestvid.getLatest(user).then(function(url) {
+  return dl ? latestvid.download(url, user) : latestvid.open(url, user);
+  process.exit(0);
+}).catch(function(e) {
+  console.log("User " + user.toUpperCase() + " doesn\'t exist or has no videos.");
+  process.exit(1);
+});

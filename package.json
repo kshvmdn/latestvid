@@ -2,7 +2,7 @@
   "name": "latestvid",
   "version": "2.1.0",
   "description": "A command-line tool to open the latest YouTube upload for an account.",
-  "main": "cli.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
