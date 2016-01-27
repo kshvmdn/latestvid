@@ -19,8 +19,8 @@ Arguments:
 
 Using LatestVid is __super__ simple, just run:
 ```bash
-$ lastvid -u YOUTUBE_ACCOUNT
-$ lastvid -u YOUTUBE_ACCOUNT -d # to download instead of opening
+$ latestvid -u YOUTUBE_ACCOUNT
+$ latestvid -u YOUTUBE_ACCOUNT -d # to download instead of opening
 ```
 
 ### Contribute
