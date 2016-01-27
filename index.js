@@ -13,8 +13,10 @@ const cli = meow(`
     -d, --download  Download or open
 `);
 
-if (cli.flags['u'] == undefined)
-  console.log('User not provided, run --help for more info.'); process.exit(1);
+if (cli.flags['u'] == undefined) {
+  console.log('User not provided, run --help for more info.'); 
+  process.exit(1);
+}
 
 let user = cli.flags['u'];
 let dl = Boolean(cli.flags['d']);
