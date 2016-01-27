@@ -10,7 +10,11 @@ const cli = meow(`
 
   Options
     -u, --user      YouTube account
-    -d, --download  Download or open
+    -d, --download  Download video
+
+  Examples
+    $ latestvid -u marquesbrownlee      # to open latest MKBHD video
+    $ latestvid -u marquesbrownlee -d   # to DL latest MKBHD video
 `);
 
 if (cli.flags['u'] == undefined) {

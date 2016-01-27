@@ -1,19 +1,27 @@
 # Latest Vid
-A command-line tool to open the most recent [YouTube](http://youtube.com) video for any account. Available on [npm](https://www.npmjs.com/package/latestvid).
+A command-line tool to open or download the most recent [YouTube](http://youtube.com) video for any account. Available on [npm](https://www.npmjs.com/package/latestvid).
 
 ![LatestVid](http://i.imgur.com/JPtGUuE.gif)
 
 ### Setup
 Prerequisites: [Node v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/) (*for ES6*)
 ``` 
-npm install -g latestvid
+$ npm install -g latestvid
 ```
 
 ### Usage
+
+Arguments:
 ```
-lastvid YOUTUBE_USER
+-u, --user      YouTube account
+-d, --download  Download video
 ```
-`YOUTUBE_USER` will default to [MKBHD](http://youtube.com/user/marquesbrownlee).
+
+Using LatestVid is __super__ simple, just run:
+```bash
+$ lastvid -u YOUTUBE_ACCOUNT
+$ lastvid -u YOUTUBE_ACCOUNT -d # to download instead of opening
+```
 
 ### Contribute
 
