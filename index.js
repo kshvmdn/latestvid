@@ -20,13 +20,13 @@ var getLatestVid = function(user) {
   });
 }
 
-var openVid = function(url) {
-  console.log("Opening the latest " + ytUser.toUpperCase() + " video...");
+var openVid = function(url, user) {
+  console.log("Opening the latest " + user.toUpperCase() + " video...");
   open(url);
 }
 
-var dlVid = function(url) {
-  console.log("Downloading the latest " + ytUser.toUpperCase() + " video...");
+var dlVid = function(url, user) {
+  console.log("Downloading the latest " + user.toUpperCase() + " video...");
   var video = ytdl(url, ['-f', '22']); // 1080p mp4
   var size = 0;
   video.on('info', function(info) {
@@ -49,13 +49,8 @@ var dlVid = function(url) {
   })
 }
 
-let ytUser = process.argv[2] != undefined ? process.argv[2] : 'marquesbrownlee';
-let download = Boolean(process.argv[3]);
-
-getLatestVid(ytUser).then(function(url) {
-  return download ? dlVid(url) : openVid(url);
-  process.exit(0);
-}).catch(function(e) {
-  console.log("User " + ytUser.toUpperCase() + " doesn\'t exist or has no videos.");
-  process.exit(1);
-});
+module.exports = {
+  getLatest: getLatestVid,
+  open: openVid,
+  download: dlVid
+};

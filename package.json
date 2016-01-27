@@ -2,7 +2,7 @@
   "name": "latestvid",
   "version": "2.0.0",
   "description": "A command-line tool to open the latest YouTube upload for an account.",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/kshvmdn/latest-vid#readme",
   "dependencies": {
     "bluebird": "*",
+    "meow": "^3.7.0",
     "open": "*",
     "os-homedir": "^1.0.1",
     "x-ray": "*",
