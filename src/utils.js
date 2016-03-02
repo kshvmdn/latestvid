@@ -8,6 +8,10 @@ const Promise = require('bluebird');
 const Xray = require('x-ray'), xray = Xray();
 const ytdl = require('youtube-dl');
 
+var exit = function(msg) {
+  console.log(msg);
+  return process.exit(1);
+}
 
 var getLatestVideo = function(user) {
   let base = 'https://www.youtube.com/user/' + user + '/videos';
@@ -50,6 +54,7 @@ var downloadVideo = function(url, user) {
 };
 
 module.exports = {
+  exit: exit,
   getLatest: getLatestVideo,
   open: openVideo,
   download: downloadVideo
