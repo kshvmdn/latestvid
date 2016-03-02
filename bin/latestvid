@@ -1,0 +1,12 @@
+#! /usr/bin/env node
+'use strict';
+
+const cli = require('../src/cli');
+const exit = require('../src/utils').exit;
+const latestvid = require('../src/');
+
+if (cli.error.code) {
+  exit(cli.error.msg);
+}
+
+latestvid.run(cli);
