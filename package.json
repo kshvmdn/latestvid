@@ -1,6 +1,6 @@
 {
   "name": "latestvid",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A command-line tool to open the latest YouTube upload for an account.",
   "main": "src/index.js",
   "scripts": {
