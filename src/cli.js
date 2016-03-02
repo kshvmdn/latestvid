@@ -32,7 +32,7 @@ const exists = function(var_) {
   return var_ !== undefined && typeof(var_) === 'boolean' && String(var_) !== '';
 };
 
-if (exists(flags['h'])) {
+if (Object.keys(flags).length == 0 || exists(flags['h'])) {
   exit(`${cli.help}`);
 } else if (exists(flags['v'])) {
   exit(`latestvid v${version}`);
