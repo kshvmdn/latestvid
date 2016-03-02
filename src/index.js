@@ -8,4 +8,11 @@ const run = function(user, toDl) {
       let task = toDl ? utils.download : utils.open;
       return task(url, user);
     })
+    .catch(e => {
+      return utils.exit(e.message);
+    });
+};
 
+module.exports.run = args => {
+  return run(args.user, args.toDl);
+};
