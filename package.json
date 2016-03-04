@@ -39,6 +39,7 @@
     "bluebird": "*",
     "meow": "^3.7.0",
     "open": "*",
+    "ora": "^0.1.1",
     "os-homedir": "^1.0.1",
     "x-ray": "*",
     "youtube-dl": "^1.10.5"
