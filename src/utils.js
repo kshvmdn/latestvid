@@ -25,7 +25,7 @@ var getLatestVideo = function(user) {
 };
 
 var openVideo = function(url, user) {
-  console.log('Opening the latest " + user.toUpperCase() + " video...');
+  console.log('Opening the latest ' + user.toUpperCase() + ' video...');
   open(url)
 };
 
