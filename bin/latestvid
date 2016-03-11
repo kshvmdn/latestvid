@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+/*jshint esversion: 6 */
 'use strict';
 
 const cli = require('../src/cli');
@@ -10,3 +11,4 @@ if (cli.error.code) {
 }
 
 latestvid.run(cli);
+
