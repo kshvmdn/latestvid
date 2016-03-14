@@ -6,16 +6,12 @@ A module for interfacing with a YouTube accounts latest upload. Either use _glob
 ### Usage
 
   Prerequisites: [Node v4.0.0](https://nodejs.org/en/blog/release/v4.0.0/)
-
-  ##### CLI
-
-  + Install
+  
+#### CLI
   
   ```
   $ npm install -g latestvid
   ```
-  
-  + Use
 
   ```
   Usage: latestvid [OPTIONS]
@@ -30,9 +26,9 @@ A module for interfacing with a YouTube accounts latest upload. Either use _glob
     $ latestvid -u marquesbrownlee -d   # download latest MKBHD video
   ```
 
-  ##### Module
-  
-  + Install
+#### Module
+
+  > see ./examples for example implementation
 
   ```
   $ npm install -S latestvid
