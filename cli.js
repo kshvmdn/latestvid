@@ -49,3 +49,28 @@ exports.validate = opts => {
     resolve(opts);
   });
 };
+
+exports.run = opts => {
+  if (opts.help) {
+    exports.stdout.write(`${help}\n`);
+    return;
+  } else if (opts.version) {
+    exports.stdout.write(`latestvid v${version}\n`);
+    return;
+  }
+  latestvid.getLatest(opts.user)
+    .then(url => {
+      let task;
+      if (opts.download) {
+        console.log(`Downloading latest ${opts.user.toUpperCase()} video...`);
+        task = latestvid.downloadVideo;
+      } else {
+        console.log(`Opening latest ${opts.user.toUpperCase()} video...`);
+        task = latestvid.openUrl;
+      }
+      return task(url);
+    })
+    .catch(error => {
+      throw new Error(error);
+    });
+};
