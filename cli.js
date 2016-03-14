@@ -29,7 +29,7 @@ const help = `
     -h --help         Display this help dialog
     -v --version      Display current version
     -d --download     Download latest video instead of opening
-    -u --user            YouTube username
+    -u --user         YouTube username
   Example:
     $ latestvid -u marquesbrownlee      # open latest MKBHD video
     $ latestvid -u marquesbrownlee -d   # download latest MKBHD video
