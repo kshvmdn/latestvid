@@ -6,7 +6,7 @@ const path = require('path');
 const xray = require('x-ray')();
 const youtubedl = require('youtube-dl');
 
-const getLatest = user => {
+module.exports.getLatest = user => {
   const url = `https://www.youtube.com/user/${user}/videos`;
   return new Promise((resolve, reject) => {
     xray(url, 'li.channels-content-item a@href')((err, body) => {
@@ -18,9 +18,9 @@ const getLatest = user => {
   });
 };
 
-const openUrl = url => open(url);
+module.exports.openUrl = url => open(url);
 
-const downloadVideo = url => {
+module.exports.downloadVideo = url => {
   const video = youtubedl(url, ['-f', '22']); // 1080p mp4
   let size = 0;
   video.on('info', info => {
