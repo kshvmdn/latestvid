@@ -1,14 +1,18 @@
 #! /usr/bin/env node
-/*jshint esversion: 6 */
 'use strict';
 
-const cli = require('../src/cli');
-const exit = require('../src/utils').exit;
-const latestvid = require('../src/');
+const cli = require('../cli');
 
-if (cli.error.code) {
-  exit(cli.error.msg);
-}
+const argv = process.argv.slice(2);
+const opts = cli.parse(argv);
 
-latestvid.run(cli);
+return cli.validate(opts)
+  .then(opts => {
+    return cli.run(opts);
+  })
+  .catch(error => {
+    cli.stderr.write(`${error.message}\n`);
+    return cli.exit(1);
+  });
 
+cli.exit(0);
