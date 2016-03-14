@@ -41,3 +41,11 @@ exports.exit = process.exit;
 
 exports.parse = argv => minimist(argv, defaults);
 
+exports.validate = opts => {
+  return new Promise((resolve, reject) => {
+    if (!opts.help && !opts.version && (opts.user === '' || typeof (opts.user) === 'boolean')) {
+      reject(new Error(`Expected user account, run 'latestvid -h' for help.`));
+    }
+    resolve(opts);
+  });
+};
