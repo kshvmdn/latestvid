@@ -4,7 +4,8 @@
   "description": "A command-line tool to open the latest YouTube upload for an account.",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "xo",
+    "test": "npm run lint"
   },
   "engines": {
     "node": ">= 4.0.0"
@@ -34,14 +35,28 @@
   "bin": {
     "latestvid": "./bin/latestvid"
   },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "rules": {
+      "space-before-function-paren": [
+        2,
+        "never"
+      ]
+    }
+  },
   "homepage": "https://github.com/kshvmdn/latest-vid#readme",
   "dependencies": {
     "bluebird": "*",
     "meow": "^3.7.0",
+    "minimist": "^1.2.0",
     "open": "*",
     "ora": "^0.1.1",
     "os-homedir": "^1.0.1",
     "x-ray": "*",
     "youtube-dl": "^1.10.5"
+  },
+  "devDependencies": {
+    "xo": "^0.13.0"
   }
 }
