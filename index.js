@@ -7,8 +7,11 @@ const xray = require('x-ray')();
 const youtubedl = require('youtube-dl');
 
 module.exports.getLatest = user => {
-  const url = `https://www.youtube.com/user/${user}/videos`;
   return new Promise((resolve, reject) => {
+    if (user === undefined || user === '') {
+      reject(new Error('Unexpected blank or undefined user.'));
+    }
+    const url = `https://www.youtube.com/user/${user}/videos`;
     xray(url, 'li.channels-content-item a@href')((err, body) => {
       if (err || body === undefined) {
         reject(new Error(`User ${user.toUpperCase()} doesn\'t exist or has no videos.`));
