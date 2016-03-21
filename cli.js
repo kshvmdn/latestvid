@@ -52,11 +52,9 @@ exports.validate = opts => {
 
 exports.run = opts => {
   if (opts.help) {
-    exports.stdout.write(`${help}\n`);
-    return;
+    return exports.stdout.write(`${help}\n`);
   } else if (opts.version) {
-    exports.stdout.write(`latestvid v${version}\n`);
-    return;
+    return exports.stdout.write(`latestvid v${version}\n`);
   }
   latestvid.getLatest(opts.user)
     .then(url => {
